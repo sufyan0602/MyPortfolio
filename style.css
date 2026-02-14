@@ -30,6 +30,38 @@
 }
 
 /* ==========================================
+   DARK MODE THEME
+   ========================================== */
+[data-theme="dark"] {
+  --color-primary: #e8e8e8;
+  --color-secondary: #b8b8b8;
+  --color-accent: #d4b896;
+  --color-accent-light: #3a3428;
+  --color-text: #e8e8e8;
+  --color-text-light: #a8a8a8;
+  --color-background: #0f0f0f;
+  --color-surface: #1a1a1a;
+  --color-border: #2a2a2a;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: rgba(15, 15, 15, 0.95);
+}
+
+[data-theme="dark"] ::selection {
+  background-color: var(--color-accent);
+  color: #0f0f0f;
+}
+
+[data-theme="dark"] .project-card.featured {
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-accent-light) 100%);
+}
+
+[data-theme="dark"] .scroll-line {
+  background: linear-gradient(to bottom, var(--color-accent), transparent);
+}
+
+/* ==========================================
    GLOBAL RESET & BASE STYLES
    ========================================== */
 * {
@@ -50,11 +82,36 @@ body {
   line-height: 1.7;
   font-weight: 300;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background-color: var(--color-accent);
   color: white;
+}
+
+/* ==========================================
+   DARK MODE TOGGLE BUTTON
+   ========================================== */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
 }
 
 /* ==========================================
@@ -74,6 +131,7 @@ body {
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
   animation: slideDown 0.6s ease;
+  transition: background-color 0.3s ease;
 }
 
 @keyframes slideDown {
@@ -98,6 +156,7 @@ body {
 .nav-links {
   display: flex;
   gap: 2.5rem;
+  align-items: center;
 }
 
 .nav-links a {
@@ -291,6 +350,7 @@ body {
   background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.3s ease;
 }
 
 .container {
@@ -425,6 +485,7 @@ body {
   padding: var(--spacing-md);
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease;
 }
 
 .skills-section h2 {
@@ -496,6 +557,10 @@ body {
   transform: translateY(-8px);
   border-color: var(--color-accent);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .project-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .project-card.featured {
@@ -674,6 +739,7 @@ body {
   background-color: var(--color-surface);
   padding: 3rem;
   border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease;
 }
 
 .contact-form {
@@ -713,6 +779,11 @@ body {
   background-color: white;
 }
 
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  background-color: var(--color-surface);
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 150px;
@@ -739,6 +810,7 @@ body {
   border-top: 1px solid var(--color-border);
   padding: 3rem 5%;
   margin-top: var(--spacing-xl);
+  transition: background-color 0.3s ease;
 }
 
 .footer-content {
@@ -852,6 +924,10 @@ body {
   
   .nav-links a {
     font-size: 0.85rem;
+  }
+  
+  .theme-toggle {
+    font-size: 1.1rem;
   }
   
   .name {
