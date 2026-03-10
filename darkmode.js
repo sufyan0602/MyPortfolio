@@ -47,8 +47,8 @@ function toggleDarkMode() {
 function updateToggleButton(theme) {
   const toggle = document.getElementById('theme-toggle');
   if (toggle) {
-    // Update icon
-    toggle.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+    // Update text
+    toggle.innerHTML = theme === 'dark' ? 'Light' : 'Dark';
     
     // Update aria-label for accessibility
     toggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);

@@ -96,7 +96,7 @@ body {
 .theme-toggle {
   background: none;
   border: none;
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   cursor: pointer;
   padding: 0.5rem;
   transition: var(--transition-fast);
@@ -104,10 +104,12 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--color-text);
+  opacity: 0.8;
 }
 
 .theme-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
+  opacity: 1;
+  transform: none;
 }
 
 .theme-toggle:active {
@@ -302,6 +304,30 @@ body {
   background-color: var(--color-primary);
   color: white;
   transform: translateY(-2px);
+}
+
+/* ==========================================
+   DARK MODE BUTTON OVERRIDES
+   ========================================== */
+[data-theme="dark"] .btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .btn-secondary {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-background);
 }
 
 /* ==========================================
