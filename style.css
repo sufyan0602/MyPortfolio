@@ -54,7 +54,7 @@
 }
 
 [data-theme="dark"] .project-card.featured {
-  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-accent-light) 100%);
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-accent) 100%);
 }
 
 [data-theme="dark"] .scroll-line {
@@ -529,6 +529,11 @@ body {
 .skill-tag:hover {
   background-color: var(--color-accent-light);
   border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .skill-tag:hover {
+  background-color: var(--color-accent);
+  color: var(--color-background);
 }
 
 /* ==========================================
